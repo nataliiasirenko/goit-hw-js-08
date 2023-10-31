@@ -36,28 +36,27 @@ function populateTextArea(){
     }
 }
 
-const date = new Date("March 16, 2030 14:25:00");
-
-date.toString();
-// "Sat Mar 16 2030 14:25:00 GMT+0200 (Eastern European Standard Time)"
-
-date.toTimeString();
-// "14:25:00 GMT+0200 (Eastern European Standard Time)"
-
-date.toLocaleTimeString();
-// "2:25:00 PM"
-
-date.toUTCString();
-// "Sat, 16 Mar 2030 12:25:00 GMT"
-
-date.toDateString();
-// "Sat Mar 16 2030"
-
-date.toISOString();
-// "2030-03-16T12:25:00.000Z"
-
-console.log(date.toLocaleString());
-// "3/16/2030, 2:25:00 PM"
-
-date.getTime();
-// 1899894300000
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 2000);
+  });
+  
+  promise
+    .then(value => {
+      console.log(value); // 5
+      return value * 2;
+    })
+    .then(value => {
+      console.log(value); // 10
+      return value * 3;
+    })
+    .then(value => {
+      console.log(value); // 30
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    .finally(() => {
+      console.log("Final task");
+    });
