@@ -42,3 +42,12 @@ const promise = new Promise((resolve, reject) => {
     }, 2000);
   });
   
+setTimeout(() => {
+    
+}, timeout);
+function name(params) {
+    
+}
+promise = new Promise((resolve, reject) => {
+    
+});
